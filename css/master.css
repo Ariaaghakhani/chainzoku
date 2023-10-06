@@ -1,0 +1,49 @@
+/* @font-face {
+  font-family: 'NeueBlack';
+  src: url('../font/NeueHaasDisplayBlack.ttf') format('ttf'),
+
+}
+
+@font-face {
+  font-family: 'NeueBold';
+  src: url('../font/NeueHaasDisplayBold.ttf') format('ttf'),
+
+} */
+
+@font-face {
+  font-family: primary;
+  src: url(../src/font/NeueHaasDisplayBold.ttf) format('opentype');
+}
+@font-face {
+  font-family: para1;
+  src: url(../src/font/NeueHaasDisplayBoldItalic.ttf);
+}
+
+@font-face {
+  font-family:para2;
+  src: url(../src/font/AkzidenzGrotesk-BoldExtended.woff2);
+}
+
+@font-face {
+  font-family: para3;
+  src: url(../src/font/Druk-Heavy-Trial.otf);
+}
+
+html{
+  scroll-behavior: smooth;
+}
+header {
+  background-image: url(../src/img/bg-sky.jpg);
+}
+
+.video:hover~.btn{
+  right: 112.5px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+

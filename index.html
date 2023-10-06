@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../dist/output.css" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+
+<!-- w-[calc(100% + 15px)] -->
+
+<body class="font-primary relative" id="body">
+
+  <main class="w-full h-[100vh] overflow-y-scroll">
+
+    <div class="fixed w-full z-10 border">
+
+      <!-- Fixed Elements -->
+
+      <section class="nav w-full flex flex-wrap py-4 lg:py-8 ps-6 lg:px-8 mx-auto items-between ">
+
+        <nav class="w-full flex justify-between content-center border mb-24">
+
+          <!-- Small Screen -->
+
+          <div class="w-full flex justify-between content-center lg:hidden">
+
+            <!-- Mobile Menu -->
+
+            <div
+              class="hamMenu cursor-pointer w-[50px] h-[50px] rounded-[50%] my-2 lg:hidden flex flex-wrap flex-col justify-center content-center bg-limeGreen duration-200"
+              onclick="menuShow()">
+              <span class="w-[35%] h-[3px] bg-black mb-[2px]"></span>
+              <span class="w-[35%] h-[3px] bg-black mb-[2px]"></span>
+              <span class="w-[35%] h-[3px] bg-black"></span>
+            </div>
+
+            <div
+              class="menu w-full h-[100vh] bg-[#fffff7] fixed top-0 left-0 lg:hidden py-4 ps-6 invisible opacity-0 duration-200 flex flex-wrap content-between z-50">
+
+              <div
+                class="closeMenu cursor-pointer w-[50px] h-[50px] rounded-[50%] my-2 lg:hidden flex flex-wrap flex-col justify-center content-center bg-limeGreen relative duration-200"
+                onclick="menuHide()">
+
+                <span class="w-[35%] h-[3px] bg-black left-[33%] absolute rotate-45"></span>
+                <span class="w-[35%] h-[3px] bg-black left-[33%] absolute rotate-[-45deg]"></span>
+              </div>
+
+              <ul class="w-full text-center text-[40px] font-NeueBlack font-black capitalize  space-y-3">
+                <li><a href="">home</a></li>
+                <li><a href="">mint</a></li>
+                <li><a href="">box reveal</a></li>
+                <li><a href="">lore</a></li>
+                <li><a href="">my zoku</a></li>
+                <li><a href="">jumps</a></li>
+                <li class="opacity-40 cursor-default"><a href="">collection</a></li>
+                <li><a
+                    class="relative ps-8 pe-2 after:contents-[''] after:w-full after:absolute after:top-0 after:left-0 after:h-full after:-skew-x-12 after:bg-limeGreen after:-z-10"
+                    href="">
+                    <div
+                      class="w-[54px] h-[54px] bg-black absolute -top-[5px] -left-5 rounded-[50%] flex justify-center items-center">
+                      <div
+                        class="w-[10px] h-[10px] [clip-path:polygon(100%_50%,0_0,0_100%)] bg-limeGreen translate-x-[2px]">
+                      </div>
+                    </div>trailer
+                  </a>
+                </li>
+              </ul>
+              <span class="w-full text-center">
+                <a href=""><i class="text-[32px] mx-[12px] text-black bi bi-discord"></i></a>
+                <a href=""><i class="text-[32px] mx-[12px] text-black bi bi-twitter"></i></a>
+                <a href=""><i class="text-[32px] mx-[12px] text-black bi bi-instagram"></i></a>
+                <a href=""><i class="text-[32px] mx-[12px] text-black bi bi-linkedin"></i></a>
+              </span>
+            </div>
+
+            <!-- Logo -->
+
+            <div class="w-[160px] lg:hidden block">
+              <figure class="">
+                <a href="#top"><img src="img/logo.png" alt="" class="cursor-pointer "></a>
+              </figure>
+            </div>
+          </div>
+
+          <!-- Big Screen -->
+
+          <!-- Logo -->
+
+          <div class="w-[11.75%] hidden lg:block">
+            <figure class="w-[160px]">
+              <a href="#"><img src="img/logo.png" alt="" class="cursor-pointer "></a>
+            </figure>
+          </div>
+
+          <!-- Menu -->
+
+          <ul
+            class="w-[70%] z-100 flex-wrap justify-center content-center  capitalize font-normal text-[1.2rem] text-white tracking-tight translate-x-[-3%] hidden lg:flex">
+            <li class="px-3 py-[3px] mx-1 rounded-[20px] bg-limeGreen text-black"><a class="" href="">home</a></li>
+            <li class="px-2 py-[3px] mx-1"><a class="" href="">mint</a></li>
+            <li class="px-2 py-[3px] mx-1"><a class="" href="">Box Reveal</a></li>
+            <li class="px-2 py-[3px] mx-1"><a class="" href="">lore</a></li>
+            <li class="px-2 py-[3px] mx-1"><a class="" href="">My Zoku</a></li>
+            <li class="px-2 py-[3px] mx-1"><a class="" href="">Jumps</a></li>
+            <li class="px-2 py-[3px] mx-1 opacity-50"><a class="cursor-default" href="">collection</a></li>
+          </ul>
+          <span class="w-[8.75%] hidden lg:flex justify-center items-center ">
+            <a href=""><i class="text-[14px] mx-[6px] text-white bi bi-discord"></i></a>
+            <a href=""><i class="text-[14px] mx-[6px] text-white bi bi-twitter"></i></a>
+            <a href=""><i class="text-[14px] mx-[6px] text-white bi bi-instagram"></i></a>
+            <a href=""><i class="text-[14px] mx-[6px] text-white bi bi-linkedin"></i></a>
+          </span>
+        </nav>
+
+
+        <!-- Site Roadmap Jump To -->
+
+
+        <div class="map w-[100px] ms-6 relative hidden lg:flex border mb-24">
+          <ul class="text-white w-[60px] uppercase font-secondary text-[10px]">
+            <li class="ps-8 py-5 w-[20px]"> <a
+                class="relative after:absolute after:contents-[''] after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full duration-300 after:duration-300"
+                href="#zokus">zokus</a></li>
+            <li class="ps-8 py-5 w-[20px]"> <a
+                class="relative after:absolute after:contents-[''] after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full duration-300 after:duration-300"
+                href="#clans">clans</a></li>
+            <li class="ps-8 py-5 w-[20px]"> <a
+                class="relative after:absolute after:contents-[''] after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full duration-300 after:duration-300"
+                href="#vision">vision</a></li>
+            <li class="ps-8 py-5 w-[20px]"> <a
+                class="relative after:absolute after:contents-[''] after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full duration-300 after:duration-300"
+                href="#custom">custom</a></li>
+            <li class="ps-8 py-5 w-[20px]"> <a
+                class="relative after:absolute after:contents-[''] after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full duration-300 after:duration-300"
+                href="#roadmap">roadmap</a></li>
+            <li class="ps-8 py-5 w-[20px]"> <a
+                class="relative after:absolute after:contents-[''] after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full duration-300 after:duration-300"
+                href="#team">team</a></li>
+            <li class="ps-8 py-5 w-[20px]"> <a
+                class="relative after:absolute after:contents-[''] after:-bottom-1 after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full duration-300 after:duration-300"
+                href="#faq">faq</a></li>
+          </ul>
+          <ul
+            class=" w-[24px] absolute top-[27px] rounded-tl-[80px] rounded-bl-[80px] border-l-[1px] border-t-[1px] border-b-[1px] overflow-hidden">
+            <li class="ps-5 h-[55.25px] border-b-[1px]"></li>
+            <li class="ps-5 h-[55.25px] border-b-[1px]"></li>
+            <li class="ps-5 h-[55.25px] border-b-[1px]"></li>
+            <li class="ps-5 h-[55.25px] border-b-[1px]"></li>
+            <li class="ps-5 h-[55.25px] border-b-[1px]"></li>
+            <li class="ps-5 h-[55.25px] "></li>
+          </ul>
+        </div>
+
+        <!-- Fixed Elements Footer -->
+
+        <div class="headerBottom w-full px-6 py-6 hidden lg:flex items-end justify-between duration-500 border ">
+          <figure class="w-[50px]">
+            <img src="img/path.svg" alt="">
+          </figure>
+
+          <!-- Trailer -->
+
+          <div
+            class="video w-[250px] [clip-path:polygon(5%_0,100%_0%,100%_100%,0%_100%)] relative after:absolute after:w-[50%] after:h-full after:bg-black after:top-0 after:[clip-path:polygon(5%_0,100%_0%,100%_100%,0%_100%)] after:left-[-100%] after:duration-500 after:ease-cubic group hover:after:left-0 hover:after:w-full duration-500 ease-cubic cursor-pointer">
+            <video src="../src/img/3332994918.mp4" muted autoplay loop></video>
+            <span class="w-full h-full top-0 left-0 absolute text-white flex justify-center items-center">
+              <p class="h-full uppercase font-trianary text-[120px] z-10 translate-x-2 -translate-y-2">play</p>
+            </span>
+          </div>
+          <div
+            class="btn absolute w-[50px] h-[50px] bg-limeGreen bottom-[70px] right-[237.5px] rounded-[50%] flex justify-center items-center  duration-500 ease-cubic">
+            <div class="w-[12px] h-[12px] [clip-path:polygon(80%_50%,0_0,0_100%)]  bg-black translate-x-[2px]">
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+    <header id="top"
+      class="relative flex flex-wrap justify-center w-full bg-cover bg-no-repeat pt-48 lg:pt-[8rem] mx-auto">
+      <div id="topScroll" class="absolute">
+        <figure class="w-full h-[content-fit] ">
+          <img src="img/logo.png" alt="">
+        </figure>
+        <h1 class="text-center font-secondary text-[2vw] text-white font-normal uppercase">
+          mint your
+          zoku. take a side</h1>
+      </div>
+      <figure class="z-[5]">
+        <img src="img/bg.webp" alt="">
+      </figure>
+    </header>
+
+
+
+
+
+
+    <!-- title RoadMap -->
+
+    <section id="roadmap" class="overflow-hidden font-primary bg-grayFooter z-50">
+      <div class="flex flex-wrap justify-center mb-10 ">
+
+        <figure class="w-full flex justify-center mb-4">
+          <img class="w-[25vw] " src="img/logo.png">
+        </figure>
+
+        <div class="text-[10vw] font-bold text-white relative">
+          <p>ROADMAP</p>
+          <figure class="w-full  absolute top-[-10vw] rotate-[-12deg] left-[5vw] md:left-[40vw] md:top-[-10vw]">
+            <img class="  w-[15vw] h-[15vw]" src="img/stickerRoad.png">
+          </figure>
+        </div>
+        <div class="w-full flex justify-center">
+
+          <span class="border-[1px] border-white font-bold text-xl px-5 py-3 rounded-xl  text-white"> 4 ARCS / 6
+            MONTHS /
+            24 JUMPS</span>
+        </div>
+      </div>
+      <!-- card transparent -->
+      <div class="flex flex-wrap w-full md:px-[15%]">
+        <div class="flex flex-wrap w-full p-5">
+          <!-- ARC1 -->
+          <!-- >row1 -->
+          <figure class="w-full flex flex-wrap justify-center my-7 rounded-xl md:hidden">
+            <img class="rounded-xl mb-3" src="img/roadMap/person1sm.jpg">
+            <img class="translate-x-[180px] translate-y-[-30px] w-[100px] " src="img/roadMap/label.svg">
+            <figcaption class="text-white">
+              <h3 class="text-4xl font-bold py-2">Time to enroll!</h3>
+              <p class="font-bold leading-5">
+                It’s the D-Day! Mint your randomly generated bunshin, directly on our website. Your clan will also be
+                attributed at random. It will be generated on the Ethereum blockchain and attributed to your wallet. The
+                design reveal will happen 1 week after mint. What will it be? Boso or Oni?
+              </p>
+            </figcaption>
+          </figure>
+          <div class="hidden md:flex flex-wrap w-full relative">
+            <div
+              class="w-[11vw] h-[11vw] flex justify-center items-center absolute left-[22vw] top-[-50px] z-[1000] rounded-full bg-black text-white text-center rotate-[-22deg] text-[1.3vw] font-bold leading-[1.5vw] px-[1vw] ">
+              THAT'S WHERE IT STARTS!</div>
+            <figure class="w-[30%] ">
+              <img class="w-[96%]" src="img/roadMap/ARC.png">
+            </figure>
+            <div class="w-[70%] overflow-hidden [clip-path:polygon(0_0,100%_0,100%_100%,5%_88%);] ">
+              <div class="w-full h-full relative group ">
+                <img class="absolute w-full" src="img/roadMap/1.png ">
+                <img class="absolute w-full" src="img/roadMap/1-border.png">
+                <figure class="absolute top-[100%] right-0 w-full h-full  group-hover:top-0 duration-300 ">
+                  <img class="h-full" src="img/roadMap/person1.webp" alt="">
+                  <figcaption
+                    class="w-[63%] opacity-0 group-hover:delay-200 group-hover:duration-500  group-hover:opacity-100  absolute p-3 left-[30px] top-[50px] text-white">
+                    <h3 class="text-4xl font-bold py-2">Time to enroll!</h3>
+                    <p class="font-bold leading-5">
+                      It’s the D-Day! Mint your randomly generated bunshin, directly on our website. Your clan will also
+                      be
+                      attributed at random. It will be generated on the Ethereum blockchain and attributed to your
+                      wallet.
+                      The
+                      design reveal will happen 1 week after mint. What will it be? Boso or Oni?
+                    </p>
+                  </figcaption>
+
+                </figure>
+
+              </div>
+            </div>
+          </div>
+          <!-- row2 -->
+          <figure class="w-full flex flex-wrap justify-center my-7 rounded-xl md:hidden">
+            <img class="rounded-xl mb-3" src="img/roadMap/baseBallBatsm.jpg">
+            <img class="translate-x-[180px] translate-y-[-30px] w-[100px] " src="img/roadMap/label.svg">
+            <figcaption class="text-white">
+              <h3 class="text-4xl font-bold py-2">Lock & Collect</h3>
+              <p class="font-bold leading-5">
+                Directly after getting your Zoku, you’ll be able to lock it, and start earning rewards, as well as go on
+                different quests. The longer you lock your Zoku, the more choice you’ll have in your claimable rewards.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="w-full flex flex-wrap justify-center my-7 rounded-xl md:hidden ">
+            <img class="rounded-xl mb-3" src="img/roadMap/magazineSm.jpg">
+            <img class="translate-x-[180px] translate-y-[-30px] w-[100px] " src="img/roadMap/label.svg">
+            <figcaption class="text-white">
+              <h3 class="text-4xl font-bold py-2">Weekly Jumps 1 to 6</h3>
+              <p class="font-bold leading-5">
+                The story begins! Jumps 1 to 6. every week, a new ChainZoku Jump from your local (online) konbini, the
+                Japanese way! Each story will elaborate on the lore and bring in a lot of surprises, with direct impact
+                on
+                the Zoku’s themselves.
+              </p>
+            </figcaption>
+          </figure>
+          <div class="hidden md:flex flex-wrap w-full  justify-between ">
+            <figure
+              class="w-[37%] relative group overflow-hidden [clip-path:polygon(0_0,100%_0,100%_98%,0_100%);] translateCustom">
+              <img class=" w-full object-cover " src="img/roadMap/2.webp">
+              <img class="absolute w-full top-0 " src="img/roadMap/2-border.png">
+              <figure class="absolute top-[100%] invisible group-hover:top-0 duration-300 group-hover:visible">
+                <img class=" " src="img/roadMap/baseBallBat.webp" alt="">
+                <figcaption class="w-[90%] absolute p-3 left-[15px] bottom-2 text-white">
+                  <h3 class="text-4xl font-bold py-2">Lock & Collect</h3>
+                  <p class="font-bold leading-5">
+                    Directly after getting your Zoku, you’ll be able to lock it, and start earning rewards, as well as
+                    go
+                    on different quests. The longer you lock your Zoku, the more choice you’ll have in your claimable
+                    rewards.
+                  </p>
+                </figcaption>
+
+              </figure>
+            </figure>
+            <div class="w-[60%] relative group overflow-hidden [clip-path:polygon(0_0%,100%_9%,100%_90%,0_97%);]">
+              <img class=" w-full " src="img/roadMap/3.webp">
+              <img class="absolute w-full top-0 " src="img/roadMap/3-border.png">
+              <figure class="absolute top-[100%] invisible group-hover:top-0 duration-300 group-hover:visible">
+                <img class=" " src="img/roadMap/magazine.webp" alt="">
+                <figcaption class="w-[90%] absolute p-3 left-[30px] bottom-5 text-white">
+
+                  <h3 class="text-4xl font-bold py-2">Weekly Jumps 1 to 6</h3>
+                  <p class="font-bold leading-5">
+                    The story begins! Jumps 1 to 6. every week, a new ChainZoku Jump from your local (online) konbini,
+                    the
+                    Japanese way! Each story will elaborate on the lore and bring in a lot of surprises, with direct
+                    impact on the Zoku’s themselves.
+                  </p>
+
+                </figcaption>
+
+              </figure>
+            </div>
+          </div>
+          <!-- row 3 -->
+
+          <figure class="w-full flex flex-wrap justify-center my-7 rounded-xl md:hidden">
+            <img class="rounded-xl mb-3" src="img/roadMap/handSm.jpg">
+            <img class="translate-x-[180px] translate-y-[-30px] w-[100px] " src="img/roadMap/label.svg">
+            <figcaption class="text-white">
+              <h3 class="text-4xl font-bold py-2">Destiny</h3>
+              <p class="font-bold leading-5">
+                Discover your Zoku’s destiny as the story unfolds. Whatever happens, it can only make it better.
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="w-full flex flex-wrap justify-center my-7 rounded-xl md:hidden">
+            <img class="rounded-xl mb-3" src="img/roadMap/canSm.jpg">
+            <img class="translate-x-[180px] translate-y-[-30px] w-[100px] " src="img/roadMap/label.svg">
+            <figcaption class="text-white">
+              <h3 class="text-4xl font-bold py-2">Claimable Drop</h3>
+              <p class="font-bold leading-5">
+                At the end of ARC 1, every Zoku owner will receive a free, claimable drop of a ChainZoku can from the
+                vending machine, which will be a customization element for their Zoku. These assets can be equipped, or
+                traded - for other items, or on the secondary markets.
+              </p>
+            </figcaption>
+          </figure>
+          <div class="hidden md:flex flex-wrap w-full justify-between mb-[200px]">
+            <figure
+              class="w-[50%] relative group overflow-hidden [clip-path:polygon(0_0,100%_0,100%_84%,0_85%)] translate-y-[23px] xl:translate-y-[44px]">
+              <img class=" w-full object-cover " src="img/roadMap/3-1.webp">
+              <img class="absolute w-full top-0 " src="img/roadMap/4-border.png">
+              <figure class="absolute top-[85%]   group-hover:top-0 duration-300 group-hover:visible">
+                <img class=" " src="img/roadMap/hand.webp" alt="">
+                <figcaption class="  absolute p-3 left-[15px] bottom-2 text-white">
+                  <h3 class="text-4xl font-bold py-2">Claimable Drop</h3>
+                  <p class="font-bold leading-5">
+                    At the end of ARC 1, every Zoku owner will receive a free, claimable drop of a ChainZoku can from
+                    the
+                    vending machine, which will be a customization element for their Zoku. These assets can be equipped,
+                    or traded - for other items, or on the secondary markets.
+                  </p>
+                </figcaption>
+
+              </figure>
+            </figure>
+            <div class="w-[48%] relative h-[90%]  group overflow-hidden ">
+              <img class=" w-full  absolute" src="img/roadMap/3-2.webp">
+              <img class=" w-full overflow-hidden top-0 " src="img/roadMap/5-border.png">
+              <figure class="absolute h-[90%] top-[100%] invisible group-hover:top-0 duration-300 group-hover:visible">
+                <img class=" " src="img/roadMap/can.webp" alt="">
+                <figcaption class="w-[90%] absolute p-3 left-[30px] bottom-[-20px] text-white">
+                  <h3 class="text-4xl font-bold py-2">Destiny</h3>
+                  <p class="font-bold leading-5">
+                    Discover your Zoku’s destiny as the story unfolds. Whatever happens, it can only make it better.
+                  </p>
+
+                </figcaption>
+
+              </figure>
+            </div>
+          </div>
+          <!-- ARC2 -->
+          <!-- row4 -->
+
+          <figure class="w-full flex flex-wrap justify-center my-7 rounded-xl md:hidden ">
+            <img class="rounded-xl mb-3" src="img/roadMap/blueCoinSm.png">
+            <img class="translate-x-[180px] translate-y-[-30px] w-[100px] " src="img/roadMap/label.svg">
+            <figcaption class="text-white">
+              <h3 class="text-4xl font-bold py-2">Digital Goens</h3>
+              <p class="font-bold leading-5">
+                Clans are at peace - for now. The vandal was found, and The New Rally came into action.
+                To celebrate their unions, clans introduced the Digital Goen, which means goens can now be traded.
+                Zokus can wrap their hard-earned goens into NFTs and trade them with others - even from the opposite
+                clan.
+              </p>
+            </figcaption>
+          </figure>
+          <div class="hidden md:flex flex-wrap w-full">
+            <figure class="w-[30%] ">
+              <img class="w-[96%]" src="img/roadMap/ARC2.png">
+            </figure>
+            <div class="w-[70%]">
+              <div
+                class="w-full h-full relative group overflow-hidden [clip-path:polygon(0_0,100%_0,100%_97%,5%_88%);] ">
+                <img class="absolute w-full" src="img/roadMap/4.webp ">
+
+                <figure class="absolute h-full w-full top-[100%]  group-hover:top-0 duration-300 group-hover:visible">
+                  <div class="w-full h-full bg-pink-400 absolute top-0 ">
+                    <img class=" absolute top-7 right-10 w-full h-full" src="img/roadMap/blueCoin.png" alt="">
+                  </div>
+                  <figcaption class="w-[63%] absolute p-3 left-[30px] top-[50px] text-white">
+                    <h3 class="text-4xl font-bold py-2">Digital Goens</h3>
+                    <p class="font-bold leading-5">
+                      Clans are at peace - for now. The vandal was found, and The New Rally came into action.
+                      To celebrate their unions, clans introduced the Digital Goen, which means goens can now be traded.
+                      Zokus can wrap their hard-earned goens into NFTs and trade them with others - even from the
+                      opposite
+                      clan.
+                    </p>
+                  </figcaption>
+
+                </figure>
+
+              </div>
+            </div>
+          </div>
+          <!-- row 5 -->
+
+
+          <figure class="w-full flex flex-wrap justify-center my-7 rounded-xl md:hidden">
+            <img class="rounded-xl mb-3" src="img/roadMap/questsSm.png">
+            <img class="translate-x-[180px] translate-y-[-30px] w-[100px] " src="img/roadMap/label.svg">
+            <figcaption class="text-white">
+              <h3 class="text-4xl font-bold py-2">World Quests</h3>
+              <p class="font-bold leading-5">
+                Send your Zokus on quests all over Tōdai City!
+                Many types of quests, requiring many types of skills.
+                Choices will need to be made, theories will need to be crafted and alliances will need to be formed…
+              </p>
+            </figcaption>
+          </figure>
+          <figure class="w-full flex flex-wrap justify-center my-7 rounded-xl md:hidden">
+            <img class="rounded-xl mb-3" src="img/roadMap/bookSm.png">
+            <img class="translate-x-[180px] translate-y-[-30px] w-[100px] " src="img/roadMap/label.svg">
+            <figcaption class="text-white">
+              <h3 class="text-4xl font-bold py-2">Weekly Jumps 7 to 12</h3>
+              <p class="font-bold leading-5">
+                The story continues! ARC 2 will begin with Jump 7, and end with Jump 12. Every week, a new ChainZoku
+                Jump
+                from your local (online) konbini, the Japanese way! Each story will elaborate on the lore, reveal
+                Destiny
+                traits, and bring in a lot of surprises.
+              </p>
+            </figcaption>
+          </figure>
+          <div class="hidden md:flex flex-wrap w-full justify-between mb-10">
+            <figure class="w-[38%] relative group overflow-hidden [clip-path:polygon(0%_0%,100%_4%,100%_97%,0_100%);] ">
+              <img class=" w-full object-cover " src="img/roadMap/5-1.webp">
+
+              <figure class="absolute h-full w-full top-[100%]  group-hover:top-0 duration-300 group-hover:visible">
+                <div class="w-full h-full bg-pink-400 absolute top-0 ">
+                  <img class=" absolute top-7 right-10 w-full h-full" src="img/roadMap/quests.webp" alt="">
+                </div>
+                <img class=" " src="img/roadMap/book.webp" alt="">
+                <figcaption class="w-[90%] absolute p-3 left-[30px] bottom-[-20px] text-white">
+                  <h3 class="text-4xl font-bold py-2">Destiny</h3>
+                  <p class="font-bold leading-5">
+                    Discover your Zoku’s destiny as the story unfolds. Whatever happens, it can only make it better.
+                  </p>
+
+                </figcaption>
+
+              </figure>
+            </figure>
+            <div
+              class="w-[60%] relative h-full  group overflow-hidden  translate-y-[19px] xl:translate-y-[29px] 2xl:translate-y-[37px] [clip-path:polygon(0%_0%,100%_7%,100%_87%,0_93%);] ">
+              <img class=" w-full  absolute" src="img/roadMap/5-2.webp">
+
+              <figure class="absolute h-full w-full top-[100%]  group-hover:top-0 duration-300 group-hover:visible">
+                <div class="w-full h-full bg-pink-400 absolute top-0 ">
+                  <img class=" absolute top-7 right-10 w-full h-full" src="img/roadMap/book.webp" alt="">
+                </div>
+                <img class=" " src="img/roadMap/book.webp" alt="">
+                <figcaption class="w-[90%] absolute p-3 left-[30px] bottom-[-20px] text-white">
+                  <h3 class="text-4xl font-bold py-2">Destiny</h3>
+                  <p class="font-bold leading-5">
+                    Discover your Zoku’s destiny as the story unfolds. Whatever happens, it can only make it better.
+                  </p>
+
+                </figcaption>
+
+              </figure>
+            </div>
+          </div>
+          <!-- row 6 -->
+          <figure class="w-full flex flex-wrap justify-center my-7 rounded-xl md:hidden">
+            <img class="rounded-xl mb-3" src="img/roadMap/candySm.png">
+            <img class="translate-x-[180px] translate-y-[-30px] w-[100px] " src="img/roadMap/label.svg">
+            <figcaption class="text-white">
+              <h3 class="text-4xl font-bold py-2">Gather Resources</h3>
+              <p class="font-bold leading-5">
+                As in every good RPG experience, gathering resources plays an important role in Todai City.
+                Starting with ARC 2, Zokus will be able to gather resources in the form of chocolate bars, that will be
+                needed to unlock special quests, with special rewards.
+                In the future, these resources will also be used as a crafting material. </p>
+            </figcaption>
+          </figure>
+          <figure class="w-full flex flex-wrap justify-center my-7 rounded-xl md:hidden">
+            <img class="rounded-xl mb-3" src="img/roadMap/medalSm.png">
+            <img class="translate-x-[180px] translate-y-[-30px] w-[100px] " src="img/roadMap/label.svg">
+            <figcaption class="text-white">
+              <h3 class="text-4xl font-bold py-2">[REDACTED]</h3>
+              <p class="font-bold leading-5">
+                The story continues! ARC 2 will begin with Jump 7, and end with Jump 12. Every week, a new ChainZoku
+                Jump
+                from you
+              </p>
+            </figcaption>
+          </figure>
+          <div class="hidden md:flex flex-wrap w-full justify-between ">
+            <figure class="w-[55%] relative group overflow-hidden [clip-path:polygon(0_6%,100%_0,100%_100%,0_100%);]">
+              <img class=" w-full object-cover " src="img/roadMap/6-1.webp">
+
+              <figure
+                class="absolute h-full w-full top-[100%] invisible  group-hover:top-0 duration-300 group-hover:visible">
+                <div class="w-full h-full bg-pink-400 absolute top-0 ">
+                  <img class=" absolute top-7 right-10 w-full h-full" src="img/roadMap/candy.webp" alt="">
+                </div>
+
+                <figcaption class="w-[90%] absolute p-3 left-[30px] bottom-[-20px] text-white">
+                  <h3 class="text-4xl font-bold py-2">Gather Resources</h3>
+                  <p class="font-bold leading-5">
+                    As in every good RPG experience, gathering resources plays an important role in Todai City.
+                    Starting with ARC 2, Zokus will be able to gather resources in the form of chocolate bars, that will
+                    be needed to unlock special quests, with special rewards.
+                    In the future, these resources will also be used as a crafting material. </p>
+                </figcaption>
+
+              </figure>
+            </figure>
+            <div
+              class="w-[44%] relative h-full  group overflow-hidden [clip-path:polygon(0_6%,100%_0,100%_100%,0_100%);] ">
+              <img class=" w-full h-full object-cover absolute " src="img/roadMap/6-2.webp">
+              <figure
+                class="absolute h-full w-full top-[100%]  invisible group-hover:top-0 duration-300 group-hover:visible">
+                <div class="w-full h-full bg-pink-400 absolute top-0 ">
+                  <img class=" absolute top-7 right-10 w-full h-full" src="img/roadMap/medal.webp" alt="">
+                </div>
+
+                <figcaption class="w-[90%] absolute p-3 left-[30px] bottom-[-20px] text-white">
+                  <h3 class="text-4xl font-bold py-2">[REDACTED]</h3>
+                  <p class="font-bold leading-5">
+                    The story continues! ARC 2 will begin with Jump 7, and end with Jump 12. Every week, a new ChainZoku
+                    Jump
+                    from you
+                  </p>
+
+                </figcaption>
+
+              </figure>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <!-- ARC3 -->
+      <div class="flex flex-wrap justify-center items-center mt-[15vh] w-full uppercase">
+        <div class="flex justify-center items-center relative mb-[15vh] ">
+          <svg class="absolute top-[-75px]" width="138" height="138" viewBox="0 0 138 138" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle r="52.6113" transform="matrix(0.947268 0.320444 -0.320443 0.947268 69.1041 68.8166)" fill="#1C1616">
+            </circle>
+            <path
+              d="M54.4744 82.8669L56.3398 60.7662L61.2546 61.181L61.5211 58.0238C61.7054 55.84 62.6615 54.0457 64.3893 52.6409C66.1159 51.2371 68.1124 50.6308 70.3787 50.8221C72.645 51.0133 74.5121 51.9457 75.9801 53.6192C77.4469 55.2937 78.0882 57.2228 77.9039 59.4066L77.6374 62.5638L82.5522 62.9786L80.6868 85.0793L54.4744 82.8669ZM64.5312 61.4576L74.3608 62.2872L74.6273 59.13C74.7384 57.8145 74.3549 56.656 73.477 55.6544C72.599 54.6529 71.4774 54.0945 70.1122 53.9793C68.747 53.8641 67.5477 54.2265 66.5143 55.0667C65.4809 55.9069 64.9087 56.9848 64.7976 58.3003L64.5312 61.4576ZM58.0174 79.9862L77.6768 81.6455L79.0092 65.8593L59.3498 64.2L58.0174 79.9862ZM68.2468 76.08C69.1479 76.1561 69.9456 75.9123 70.6399 75.3487C71.3333 74.784 71.7166 74.0676 71.7899 73.1993C71.8631 72.3311 71.6053 71.5605 71.0165 70.8876C70.4264 70.2156 69.6808 69.8416 68.7798 69.7655C67.8787 69.6895 67.0816 69.9333 66.3883 70.4969C65.6939 71.0615 65.31 71.778 65.2368 72.6462C65.1635 73.5144 65.4218 74.2851 66.0118 74.9581C66.6008 75.63 67.3458 76.0039 68.2468 76.08ZM58.0174 79.9862L59.3498 64.2L58.0174 79.9862Z"
+              fill="#FFFFF7"></path>
+          </svg>
+          <p class="text-9xl text-white font-extrabold ">ARC3</p>
+          <div
+            class=" bg-limeGreen rotate-[-5deg] text-black flex justify-center items-center text-center py-2 text-[12px] font-secondary uppercase absolute bottom-0 w-full">
+            unlocked 12 weeks after reveal
+          </div>
+        </div>
+        <div class="w-full h-full"></div>
+        <!-- ARC4 -->
+        <div class="flex justify-center items-center relative mb-10">
+          <svg class="absolute top-[-75px]" width="138" height="138" viewBox="0 0 138 138" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <circle r="52.6113" transform="matrix(0.947268 0.320444 -0.320443 0.947268 69.1041 68.8166)" fill="#1C1616">
+            </circle>
+            <path
+              d="M54.4744 82.8669L56.3398 60.7662L61.2546 61.181L61.5211 58.0238C61.7054 55.84 62.6615 54.0457 64.3893 52.6409C66.1159 51.2371 68.1124 50.6308 70.3787 50.8221C72.645 51.0133 74.5121 51.9457 75.9801 53.6192C77.4469 55.2937 78.0882 57.2228 77.9039 59.4066L77.6374 62.5638L82.5522 62.9786L80.6868 85.0793L54.4744 82.8669ZM64.5312 61.4576L74.3608 62.2872L74.6273 59.13C74.7384 57.8145 74.3549 56.656 73.477 55.6544C72.599 54.6529 71.4774 54.0945 70.1122 53.9793C68.747 53.8641 67.5477 54.2265 66.5143 55.0667C65.4809 55.9069 64.9087 56.9848 64.7976 58.3003L64.5312 61.4576ZM58.0174 79.9862L77.6768 81.6455L79.0092 65.8593L59.3498 64.2L58.0174 79.9862ZM68.2468 76.08C69.1479 76.1561 69.9456 75.9123 70.6399 75.3487C71.3333 74.784 71.7166 74.0676 71.7899 73.1993C71.8631 72.3311 71.6053 71.5605 71.0165 70.8876C70.4264 70.2156 69.6808 69.8416 68.7798 69.7655C67.8787 69.6895 67.0816 69.9333 66.3883 70.4969C65.6939 71.0615 65.31 71.778 65.2368 72.6462C65.1635 73.5144 65.4218 74.2851 66.0118 74.9581C66.6008 75.63 67.3458 76.0039 68.2468 76.08ZM58.0174 79.9862L59.3498 64.2L58.0174 79.9862Z"
+              fill="#FFFFF7"></path>
+          </svg>
+          <p class="text-9xl text-white font-extrabold ">ARC4</p>
+          <div
+            class=" bg-limeGreen rotate-[-5deg] text-black flex justify-center items-center text-center py-2 text-[12px] font-secondary  absolute bottom-0 w-full">
+            unlocked 12 weeks after reveal
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Team section -->
+
+
+    <section id="team" class="w-full  relative overflow-hidden bg-grayFooter">
+
+      <div
+        class="absolute z-40 top-[40%] translate-y-[-50%] rounded-full right-[2%] w-[75px] h-[75px] bg-limeGreen flex justify-center items-center ">
+        <svg data-sticker-disable="" width="21" height="14" viewBox="0 0 21 14" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path data-sticker-disable=""
+            d="M7 11.6078L18.791 7.06796L18.791 7.01359L7 2.41942L7 0L21 5.62718L21 8.34563L7 14L7 11.6078V11.6078Z"
+            fill="black"></path>
+          <path data-sticker-disable="" d="M20 7L-2.52266e-07 7.00001" stroke="black" stroke-width="2"
+            stroke-miterlimit="10"></path>
+        </svg>
+      </div>
+      <div
+        class="absolute z-50 top-[40%] translate-y-[-50%] rounded-full left-[2%] w-[75px] h-[75px] bg-limeGreen flex justify-center items-center ">
+        <svg class="rotate-180" data-sticker-disable="" width="21" height="14" viewBox="0 0 21 14" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path data-sticker-disable=""
+            d="M7 11.6078L18.791 7.06796L18.791 7.01359L7 2.41942L7 0L21 5.62718L21 8.34563L7 14L7 11.6078V11.6078Z"
+            fill="black"></path>
+          <path data-sticker-disable="" d="M20 7L-2.52266e-07 7.00001" stroke="black" stroke-width="2"
+            stroke-miterlimit="10"></path>
+        </svg>
+      </div>
+      <div class="w-[3000px] flex flex-wrap justify-evenly text-white ">
+
+        <div class="w-[15%]  relative ">
+          <img class="w-full rounded-t-lg" src="img/team/team1.jpeg">
+          <div class="w-full bg-black py-5 [clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_81%);] pb-14 px-8">
+            <h3 class="text-4xl underline leading-9 pb-5">Florent<br> Creative Director </h3>
+            <p>With 8 years of experience in creative direction, illustration and fashion design, he also
+              single-handedly
+              came up with the whole lore of ChainZoku.</p>
+          </div>
+          <span
+            class="w-[55px] h-[55px] bg-white rounded-full bottom-2 left-2 absolute flex justify-center items-center"><i
+              class="text-black mb-1 text-xl bi bi-instagram"></i></span>
+        </div>
+
+        <div class="w-[15%]  relative">
+          <img class="w-full rounded-t-lg" src="img/team/team2.webp">
+          <div class="w-full bg-black py-5 [clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_81%);] pb-14 px-8">
+            <h3 class="text-4xl underline leading-9 pb-5">Florent<br> Creative Director </h3>
+            <p>With 8 years of experience in creative direction, illustration and fashion design, he also
+              single-handedly
+              came up with the whole lore of ChainZoku.</p>
+          </div>
+          <span
+            class="w-[55px] h-[55px] bg-white rounded-full bottom-2 left-2 absolute flex justify-center items-center"><i
+              class="text-black mb-1 text-xl bi bi-instagram"></i></span>
+
+        </div>
+
+
+        <div class="w-[15%] relative ">
+          <img class="w-full rounded-t-lg" src="img/team/team3.jpeg">
+          <div class="w-full bg-black py-5 [clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_81%);] pb-14 px-8">
+            <h3 class="text-4xl underline leading-9 pb-5">Florent<br> Creative Director </h3>
+            <p>With 8 years of experience in creative direction, illustration and fashion design, he also
+              single-handedly
+              came up with the whole lore of ChainZoku.</p>
+          </div>
+          <span
+            class="w-[55px] h-[55px] bg-white rounded-full bottom-2 left-2 absolute flex justify-center items-center"><i
+              class="text-black mb-1 text-xl bi bi-instagram"></i></span>
+
+        </div>
+
+
+        <div class="w-[15%] relative">
+          <img class="w-full rounded-t-lg" src="img/team/team4.jpeg">
+          <div class="w-full bg-black py-5 [clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_81%);] pb-14 px-8">
+            <h3 class="text-4xl underline leading-9 pb-5">Florent<br> Creative Director </h3>
+            <p>With 8 years of experience in creative direction, illustration and fashion design, he also
+              single-handedly
+              came up with the whole lore of ChainZoku.</p>
+          </div>
+          <span
+            class="w-[55px] h-[55px] bg-white rounded-full bottom-2 left-2 absolute flex justify-center items-center"><i
+              class="text-black mb-1 text-xl bi bi-instagram"></i></span>
+
+        </div>
+
+        <div class="w-[15%] relative ">
+          <img class="w-full rounded-t-lg" src="img/team/team5.jpeg">
+          <div class="w-full bg-black py-5 [clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_81%);] pb-14 px-8">
+            <h3 class="text-4xl underline leading-9 pb-5">Florent<br> Creative Director </h3>
+            <p>With 8 years of experience in creative direction, illustration and fashion design, he also
+              single-handedly
+              came up with the whole lore of ChainZoku.</p>
+          </div>
+          <span
+            class="w-[55px] h-[55px] bg-white rounded-full bottom-2 left-2 absolute flex justify-center items-center"><i
+              class="text-black mb-1 text-xl bi bi-instagram"></i></span>
+
+        </div>
+
+
+        <div class="w-[15%]  relative">
+          <img class="w-full rounded-t-lg" src="img/team/team6.jpeg">
+          <div class="w-full bg-black py-5 [clip-path:polygon(0%_0%,100%_0%,100%_100%,0%_81%);] pb-14 px-8">
+            <h3 class="text-4xl underline leading-9 pb-5">Florent<br> Creative Director </h3>
+            <p>With 8 years of experience in creative direction, illustration and fashion design, he also
+              single-handedly
+              came up with the whole lore of ChainZoku.</p>
+          </div>
+          <span
+            class="w-[55px] h-[55px] bg-white rounded-full bottom-2 left-2 absolute flex justify-center items-center"><i
+              class="text-black mb-1 text-xl bi bi-instagram"></i></span>
+
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+
+
+    <section id="faq" class="w-full h-full font-DrukHeavy px-5 bg-grayFooter">
+      <div class=" bg-white rounded-xl flex flex-wrap overflow-hidden px-4">
+        <div class="w-full lg:w-[50%] px-[10%] lg:pe-[5%]   ">
+          <p class="text-9xl py-16 lg:text-[13rem] font-extrabold flex justify-center">FAQ</p>
+          <div class=" mb-10">
+            <div class="w-full overflow-hidden">
+              <div class="w-full flex flex-nowrap">
+                <svg class="w-full" height="2" viewBox="0 0 453 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.46289" x2="453" y2="1.46289" stroke="#1C1616" stroke-dasharray="1 6"></line>
+                </svg>
+                <svg class="hidden md:block w-full lg:hidden" height="2" viewBox="0 0 453 2" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.46289" x2="453" y2="1.46289" stroke="#1C1616" stroke-dasharray="1 6"></line>
+                </svg>
+
+              </div>
+              <div class="flex flex-wrap justify-between w-full">
+                <p class="underline text-lg lg:text-[24px] font-bold py-9 ">What is ChainZoku?</p>
+                <svg class="w-[15px] " viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <path
+                    d="M4.81144 13.946H8.45144V9.136H12.9494V5.73H8.45144V0.945999H4.81144V5.73H0.313438V9.136H4.81144V13.946Z"
+                    fill="#1C1616"></path>
+                </svg>
+
+              </div>
+            </div>
+
+            <div class="w-full overflow-hidden">
+              <div class="w-full flex flex-nowrap">
+                <svg class="w-full" height="2" viewBox="0 0 453 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.46289" x2="453" y2="1.46289" stroke="#1C1616" stroke-dasharray="1 6"></line>
+                </svg>
+                <svg class="hidden md:block w-full lg:hidden" height="2" viewBox="0 0 453 2" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.46289" x2="453" y2="1.46289" stroke="#1C1616" stroke-dasharray="1 6"></line>
+                </svg>
+
+              </div>
+              <div class="flex flex-wrap justify-between w-full">
+                <p class="underline text-lg lg:text-[24px] font-bold py-9 ">What is ChainZoku?</p>
+                <svg class="w-[15px] " viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <path
+                    d="M4.81144 13.946H8.45144V9.136H12.9494V5.73H8.45144V0.945999H4.81144V5.73H0.313438V9.136H4.81144V13.946Z"
+                    fill="#1C1616"></path>
+                </svg>
+
+              </div>
+            </div>
+
+            <div class="w-full overflow-hidden">
+              <div class="w-full flex flex-nowrap">
+                <svg class="w-full" height="2" viewBox="0 0 453 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.46289" x2="453" y2="1.46289" stroke="#1C1616" stroke-dasharray="1 6"></line>
+                </svg>
+                <svg class="hidden md:block w-full lg:hidden" height="2" viewBox="0 0 453 2" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.46289" x2="453" y2="1.46289" stroke="#1C1616" stroke-dasharray="1 6"></line>
+                </svg>
+
+              </div>
+              <div class="flex flex-wrap justify-between w-full">
+                <p class="underline text-lg lg:text-[24px] font-bold py-9 ">What is ChainZoku?</p>
+                <svg class="w-[15px] " viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <path
+                    d="M4.81144 13.946H8.45144V9.136H12.9494V5.73H8.45144V0.945999H4.81144V5.73H0.313438V9.136H4.81144V13.946Z"
+                    fill="#1C1616"></path>
+                </svg>
+
+              </div>
+            </div>
+
+            <div class="w-full overflow-hidden">
+              <div class="w-full flex flex-nowrap">
+                <svg class="w-full" height="2" viewBox="0 0 453 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.46289" x2="453" y2="1.46289" stroke="#1C1616" stroke-dasharray="1 6"></line>
+                </svg>
+                <svg class="hidden md:block w-full lg:hidden" height="2" viewBox="0 0 453 2" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.46289" x2="453" y2="1.46289" stroke="#1C1616" stroke-dasharray="1 6"></line>
+                </svg>
+
+              </div>
+              <div class="flex flex-wrap justify-between w-full">
+                <p class="underline text-lg lg:text-[24px] font-bold py-9 ">What is ChainZoku?</p>
+                <svg class="w-[15px] " viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <path
+                    d="M4.81144 13.946H8.45144V9.136H12.9494V5.73H8.45144V0.945999H4.81144V5.73H0.313438V9.136H4.81144V13.946Z"
+                    fill="#1C1616"></path>
+                </svg>
+
+              </div>
+            </div>
+
+
+            <div class="w-full overflow-hidden">
+              <div class="w-full flex flex-nowrap">
+                <svg class="w-full" height="2" viewBox="0 0 453 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.46289" x2="453" y2="1.46289" stroke="#1C1616" stroke-dasharray="1 6"></line>
+                </svg>
+                <svg class="hidden md:block w-full lg:hidden" height="2" viewBox="0 0 453 2" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.46289" x2="453" y2="1.46289" stroke="#1C1616" stroke-dasharray="1 6"></line>
+                </svg>
+
+              </div>
+              <div class="flex flex-wrap justify-between w-full">
+                <p class="underline text-lg lg:text-[24px] font-bold py-9 ">What is ChainZoku?</p>
+                <svg class="w-[15px] " viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <path
+                    d="M4.81144 13.946H8.45144V9.136H12.9494V5.73H8.45144V0.945999H4.81144V5.73H0.313438V9.136H4.81144V13.946Z"
+                    fill="#1C1616"></path>
+                </svg>
+
+              </div>
+            </div>
+
+
+            <div class="w-full overflow-hidden">
+              <div class="w-full flex flex-nowrap">
+                <svg class="w-full" height="2" viewBox="0 0 453 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.46289" x2="453" y2="1.46289" stroke="#1C1616" stroke-dasharray="1 6"></line>
+                </svg>
+                <svg class="hidden md:block w-full lg:hidden" height="2" viewBox="0 0 453 2" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.46289" x2="453" y2="1.46289" stroke="#1C1616" stroke-dasharray="1 6"></line>
+                </svg>
+
+              </div>
+              <div class="flex flex-wrap justify-between w-full">
+                <p class="underline text-lg lg:text-[24px] font-bold py-9 ">What is ChainZoku?</p>
+                <svg class="w-[15px] " viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <path
+                    d="M4.81144 13.946H8.45144V9.136H12.9494V5.73H8.45144V0.945999H4.81144V5.73H0.313438V9.136H4.81144V13.946Z"
+                    fill="#1C1616"></path>
+                </svg>
+
+              </div>
+            </div>
+
+            <div class="w-full overflow-hidden">
+              <div class="w-full flex flex-nowrap">
+                <svg class="w-full" height="2" viewBox="0 0 453 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.46289" x2="453" y2="1.46289" stroke="#1C1616" stroke-dasharray="1 6"></line>
+                </svg>
+                <svg class="hidden md:block w-full lg:hidden" height="2" viewBox="0 0 453 2" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.46289" x2="453" y2="1.46289" stroke="#1C1616" stroke-dasharray="1 6"></line>
+                </svg>
+
+              </div>
+              <div class="flex flex-wrap justify-between w-full">
+                <p class="underline text-lg lg:text-[24px] font-bold py-9 ">What is ChainZoku?</p>
+                <svg class="w-[15px] " viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <path
+                    d="M4.81144 13.946H8.45144V9.136H12.9494V5.73H8.45144V0.945999H4.81144V5.73H0.313438V9.136H4.81144V13.946Z"
+                    fill="#1C1616"></path>
+                </svg>
+
+              </div>
+            </div>
+
+            <div class="w-full overflow-hidden">
+              <div class="w-full flex flex-nowrap">
+                <svg class="w-full" height="2" viewBox="0 0 453 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.46289" x2="453" y2="1.46289" stroke="#1C1616" stroke-dasharray="1 6"></line>
+                </svg>
+                <svg class="hidden md:block w-full lg:hidden" height="2" viewBox="0 0 453 2" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <line y1="1.46289" x2="453" y2="1.46289" stroke="#1C1616" stroke-dasharray="1 6"></line>
+                </svg>
+
+              </div>
+              <div class="flex flex-wrap justify-between w-full">
+                <p class="underline text-lg lg:text-[24px] font-bold py-9 ">What is ChainZoku?</p>
+                <svg class="w-[15px] " viewBox="0 0 13 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true">
+                  <path
+                    d="M4.81144 13.946H8.45144V9.136H12.9494V5.73H8.45144V0.945999H4.81144V5.73H0.313438V9.136H4.81144V13.946Z"
+                    fill="#1C1616"></path>
+                </svg>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-[50%] hidden lg:flex ">
+          <figure class="w-full ">
+            <img src="img/TNT.webp">
+          </figure>
+        </div>
+      </div>
+      </div>
+
+    </section>
+
+    <!-- Footer -->
+
+
+    <footer class="relative bg-grayFooter ">
+      <div class="flex flex-wrap justify-center py-20 w-full">
+        <div class="w-[90%] sm:w-[70%] md:w-[40%] relative">
+          <img class="w-full " src="img/catFooter.webp">
+          <p
+            class="absolute top-[30%] left-[50%] translate-x-[-50%] translate-y-[-50%] w-[80%] md:w-full  text-center z-[100] text-3xl md:text-[4vw]  px-10 py-2 lg:py-5 font-extrabold  rotate-[-6deg]  before:bg-limeGreen   before:left-[12px] before:content-[''] before:top-[-3px]  before:skew-x-[-30deg] before:h-full before:w-full before:absolute before:z-[-1]">
+            Join Discord</p>
+        </div>
+      </div>
+
+
+      <div class="md:absolute w-full flex md:top-[50%] md:right-[5%] md:translate-y-[-50%] justify-end">
+        <div class=" flex justify-end">
+          <ul class=" text-white font-bold">
+            <li class="text-white underline  ">Home</li>
+            <li class="text-gray-200 ">home</li>
+            <li class="text-gray-200 ">home</li>
+            <li class="text-gray-200 ">home</li>
+            <li class="text-gray-200 ">home</li>
+            <li class="text-gray-200 ">home</li>
+            <li class="text-gray-200 ">home</li>
+          </ul>
+        </div>
+      </div>
+
+    </footer>
+  </main>
+</body>
+<script src="js/master.js"></script>
+
+</html>
